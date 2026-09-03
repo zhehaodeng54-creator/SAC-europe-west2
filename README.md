@@ -1,6 +1,6 @@
 # Scenario-Available Compute Reconstruction for Google Cloud europe-west2
 
-This repository provides a retrospective public-data demonstration of scenario-available compute (SAC) for the Google Cloud europe-west2 incident of 19-20 July 2022. It establishes calculability from a public incident report, not predictive validity or AI workload delivery.
+This repository reproduces a scenario-available compute (SAC) calculation for the Google Cloud europe-west2 incident of 19-20 July 2022. The exercise shows that SAC can be calculated from a public incident report. It does not test predictive validity or measure AI workload delivery.
 
 ## Key results
 
@@ -33,7 +33,7 @@ Python 3 is required. The script uses only the Python standard library.
 python3 code/sac_calc.py
 ```
 
-The script performs both a one-minute discrete simulation and an event-boundary integration. It also recomputes WSDH from the weighted sum of cohort-level deficit hours. The three calculations must agree. The verified cohort records are provided in `data/sac_cohorts.csv`; the calculation script preserves the same fixed inputs directly in code so that its logic and outputs remain unchanged.
+Running the script produces a one-minute simulation and an event-boundary calculation. It then computes WSDH again from the cohort-level deficit hours. The three results should agree. The verified cohort records are in `data/sac_cohorts.csv`. To preserve the audited calculation, the script also stores those fixed inputs directly in the code.
 
 ## Repository contents
 
@@ -65,7 +65,7 @@ For cohort or workload class `i` at time `t`:
 - `SAC(t) = sum_i w_i f_i(t) / sum_i w_i`. Here, every `w_i` equals `1/6`.
 - `WSDH = sum_t [1 - SAC(t)] delta_t`, where `delta_t` is measured in hours.
 
-The following boundaries govern interpretation:
+Interpret the results within these limits:
 
 1. This is a retrospective public-data demonstration.
 2. It establishes SAC calculability, not predictive validity.
@@ -85,7 +85,7 @@ The sole primary source is the official Google Cloud incident report, *Multiple 
 
 https://status.cloud.google.com/incidents/fmEL9i2fArADKawkZAa2
 
-The cleaned cohort table, fixed calculation rules, calculation script, piecewise results, summary metrics, and independent arithmetic checks are included in this repository. All numerical inputs trace to the official report. Missing service fractions or durations were not imputed.
+The repository contains the cleaned cohort table, calculation rules, Python script, piecewise results, summary metrics, and arithmetic checks. Every numerical input traces to the official report. Missing service fractions and durations were left missing rather than imputed.
 
 ## License
 

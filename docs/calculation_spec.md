@@ -1,6 +1,6 @@
 # Calculation specification
 
-The following rules were fixed before calculating the summary metrics.
+The calculation used the following rules throughout.
 
 1. The test window runs from the earliest impact start to the latest impact end among the six included cohorts: 19 July 2022 07:05 PDT to 20 July 2022 02:20 PDT, equivalent to 14:05 UTC to 09:20 UTC. Its duration is 1,155 min, or 19 h 15 min.
 2. The time step is one minute.

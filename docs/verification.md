@@ -1,6 +1,6 @@
 # Independent arithmetic verification
 
-Two independent calculation methods produce the same results.
+The calculation was run two ways, with matching results.
 
 | Method | Minimum SAC | Time below 0.80 | Sustained recovery | WSDH, h |
 |---|---:|---:|---:|---:|

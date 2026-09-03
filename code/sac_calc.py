@@ -6,7 +6,7 @@ def pdt(y, m, d, H, M):
     return datetime.datetime(y, m, d, H, M, tzinfo=PDT)
 
 # Verified from https://status.cloud.google.com/incidents/fmEL9i2fArADKawkZAa2
-# available fractions are the reported available fraction during each official window.
+# Fractions below are the reported available shares during each service window.
 cohorts = [
     ("CS",   Fraction(86, 100),        pdt(2022, 7, 19, 7, 18), pdt(2022, 7, 19, 8, 54)),   # ~86% ReadObject availability
     ("BT",   Fraction(30, 100),        pdt(2022, 7, 19, 7, 5),  pdt(2022, 7, 20, 2, 20)),   # ~70% had 100% unavailability -> 30% available
@@ -21,7 +21,7 @@ t0 = min(c[2] for c in cohorts)
 t1 = max(c[3] for c in cohorts)
 N = int((t1 - t0).total_seconds() // 60)
 
-# --- 1-minute discrete simulation (left-closed, right-open) ---
+# Minute-level calculation on left-closed, right-open intervals.
 sac = []
 for t in range(N):
     tm = t0 + datetime.timedelta(minutes=t)
@@ -43,7 +43,7 @@ print("time_below_0.80_minutes =", below, "=", below / 60, "h")
 print("sustained_recovery_minutes =", sust, "=", sust / 60, "h")
 print("WSDH_hours =", float(wsdh))
 
-# --- piecewise event-boundary integration (must match simulation) ---
+# Independent check using event boundaries.
 events = []
 for cid, av, s, e in cohorts:
     events.append((int((s - t0).total_seconds() // 60), +1, cid))
@@ -73,7 +73,7 @@ print("piecewise min SAC =", float(min(s for _, _, s in seg)))
 print("piecewise below-threshold minutes =", sum(b - a for a, b, s in seg if s < THR))
 print("piecewise WSDH =", float(sum((Fraction(1) - s) * Fraction(b - a, 60) for a, b, s in seg)))
 
-# --- per-service deficit cross-check ---
+# A second WSDH check using individual cohort deficits.
 per_service = []
 for cid, av, s, e in cohorts:
     dur = Fraction(int((e - s).total_seconds() // 60), 60)
