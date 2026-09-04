@@ -1,0 +1,2 @@
+case,threshold,included_cohorts,omitted_cohort,test_window_minutes,minimum_availability_index,time_below_threshold_minutes,final_recovery_minutes,recovery_observed,right_censored,wsdh_hours,note
+baseline,0.8000000000,"CS,BT,CT,CSch,GKE,VPC",,1155,0.7077747696,720,865,true,false,4.1213276812,"six numerical cohorts, equal weights, 1-min step, threshold 0.80"

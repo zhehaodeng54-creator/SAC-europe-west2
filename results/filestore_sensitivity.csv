@@ -1,0 +1,3 @@
+case,threshold,included_cohorts,omitted_cohort,test_window_minutes,minimum_availability_index,time_below_threshold_minutes,final_recovery_minutes,recovery_observed,right_censored,wsdh_hours,note
+filestore_reported_timestamps,0.8000000000,"CS,BT,CT,CSch,GKE,VPC,FST",,1155,0.6852355168,685,865,true,false,4.5022094410,sensitivity only: Filestore 0.55 for 905 min (reported timestamps)
+filestore_stated_duration,0.8000000000,"CS,BT,CT,CSch,GKE,VPC,FST",,1155,0.6852355168,630,810,true,false,4.2075665839,sensitivity only: Filestore 0.55 for 630 min (stated duration)

@@ -1,8 +1,9 @@
 # Piecewise results
 
-The calculation has nine intervals. Minute offsets are measured from 07:05 PDT on 19 July 2022. Delivered fractions are listed in cohort order: CS, BT, CT, CSch, GKE, and VPC.
+Minute offsets are measured from 07:05 PDT on 19 July 2022. Fractions are listed in
+cohort order CS, BT, CT, CSch, GKE, and VPC.
 
-| Interval, min | Interval, PDT | Active cohorts | f_CS | f_BT | f_CT | f_CSch | f_GKE | f_VPC | SAC |
+| Interval, min | Interval, PDT | Active cohorts | f_CS | f_BT | f_CT | f_CSch | f_GKE | f_VPC | Availability index |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|
 | `[0, 13)` | 07:05-07:18 | BT | 1.000 | 0.300 | 1.000 | 1.000 | 1.000 | 1.000 | 0.8833 |
 | `[13, 109)` | 07:18-08:54 | BT, CS | 0.860 | 0.300 | 1.000 | 1.000 | 1.000 | 1.000 | 0.8600 |
@@ -14,4 +15,5 @@ The calculation has nine intervals. Minute offsets are measured from 07:05 PDT o
 | `[807, 865)` | 20:32-21:30 | BT, GKE | 1.000 | 0.300 | 1.000 | 1.000 | 0.430 | 1.000 | 0.7883 |
 | `[865, 1155)` | 21:30-02:20 | BT | 1.000 | 0.300 | 1.000 | 1.000 | 1.000 | 1.000 | 0.8833 |
 
-With equal weights, `SAC(t) = [sum_i f_i(t)] / 6`. A cohort has `f_i(t) = 1` outside its reported impact window.
+Outside its reported impact window, a cohort has `f_i(t) = 1`. The equal-weight index
+is the arithmetic mean of the six cohort fractions.

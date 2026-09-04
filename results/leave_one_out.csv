@@ -1,0 +1,7 @@
+case,threshold,included_cohorts,omitted_cohort,test_window_minutes,minimum_availability_index,time_below_threshold_minutes,final_recovery_minutes,recovery_observed,right_censored,wsdh_hours,note
+omit_CS,0.8000000000,"BT,CT,CSch,GKE,VPC",CS,1155,0.6493297236,720,865,true,false,4.9007932174,"equal weights renormalized; selection sensitivity, not business weights"
+omit_BT,0.8000000000,"CS,CT,CSch,GKE,VPC",BT,1155,0.7893297236,198,379,true,false,2.2505932174,"equal weights renormalized; selection sensitivity, not business weights"
+omit_CT,0.8000000000,"CS,BT,CSch,GKE,VPC",CT,1155,0.6613297236,720,865,true,false,4.9057932174,"equal weights renormalized; selection sensitivity, not business weights"
+omit_CSch,0.8000000000,"CS,BT,CT,GKE,VPC",CSch,1155,0.6613297236,720,865,true,false,4.9057932174,"equal weights renormalized; selection sensitivity, not business weights"
+omit_GKE,0.8000000000,"CS,BT,CT,CSch,VPC",GKE,1155,0.7633297236,626,807,true,false,3.5775932174,"equal weights renormalized; selection sensitivity, not business weights"
+omit_VPC,0.8000000000,"CS,BT,CT,CSch,GKE",VPC,1155,0.7220000000,720,865,true,false,4.1874000000,"equal weights renormalized; selection sensitivity, not business weights"

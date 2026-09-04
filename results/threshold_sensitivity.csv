@@ -1,0 +1,4 @@
+case,threshold,included_cohorts,omitted_cohort,test_window_minutes,minimum_availability_index,time_below_threshold_minutes,final_recovery_minutes,recovery_observed,right_censored,wsdh_hours,note
+threshold_0.70,0.7000000000,"CS,BT,CT,CSch,GKE,VPC",,1155,0.7077747696,0,0,true,false,4.1213276812,WSDH is independent of the passing threshold
+threshold_0.80,0.8000000000,"CS,BT,CT,CSch,GKE,VPC",,1155,0.7077747696,720,865,true,false,4.1213276812,WSDH is independent of the passing threshold
+threshold_0.90,0.9000000000,"CS,BT,CT,CSch,GKE,VPC",,1155,0.7077747696,1155,,false,true,4.1213276812,WSDH is independent of the passing threshold
