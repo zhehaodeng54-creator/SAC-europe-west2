@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this repository, please cite it using the metadata below."
-title: "Scenario-Available Compute Reconstruction for Google Cloud europe-west2"
+message: "If you use this software, please cite it using the metadata below."
+title: "Availability-Only Service Reconstruction for Google Cloud europe-west2"
 type: software
 authors:
   - family-names: "Deng"
@@ -8,12 +8,17 @@ authors:
 repository-code: "https://github.com/zhehaodeng54-creator/SAC-europe-west2"
 url: "https://github.com/zhehaodeng54-creator/SAC-europe-west2"
 license: MIT
-version: "1.0.0"
-date-released: 2026-09-03
-abstract: "An availability-only reconstruction of scenario-available compute for six normalized service cohorts during the Google Cloud europe-west2 incident of 19–20 July 2022."
+version: "2.0.0"
+date-released: 2026-09-04
+abstract: >-
+  An availability-only reconstruction for six normalized cloud-service
+  cohorts during the Google Cloud europe-west2 incident of 19-20 July 2022.
+  Includes threshold sensitivity, leave-one-cohort-out analysis,
+  alternative Filestore duration interpretations, cohort contributions,
+  and tests of arithmetic consistency and within-window recovery.
 keywords:
-  - scenario-available compute
-  - cloud availability
-  - resilience
+  - service availability
+  - incident reconstruction
+  - sensitivity analysis
   - Google Cloud
   - europe-west2
